@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/id_button"
-        android:text="测试v"
+        android:text="测试错误日志上传"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>

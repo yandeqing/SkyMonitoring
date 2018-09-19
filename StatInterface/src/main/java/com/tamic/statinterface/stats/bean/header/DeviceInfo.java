@@ -1,11 +1,13 @@
 package com.tamic.statinterface.stats.bean.header;
 
+import com.tamic.statinterface.stats.bean.BaseBean;
+
 /**
  *
  * @author Tamic
  * @date 2016-03-24
  */
-public class DeviceInfo {
+public class DeviceInfo extends BaseBean{
 
     private String deviceId;
 

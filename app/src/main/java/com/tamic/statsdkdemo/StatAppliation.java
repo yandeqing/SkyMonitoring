@@ -2,6 +2,7 @@ package com.tamic.statsdkdemo;
 
 import android.app.Application;
 
+import com.tamic.statinterface.stats.constants.NetConfig;
 import com.tamic.statinterface.stats.core.TcStatInterface;
 import com.tamic.statinterface.stats.db.DbManager;
 import com.tamic.statinterface.stats.util.LogUtil;
@@ -26,7 +27,7 @@ public class StatAppliation extends Application {
         // init statSdk
         TcStatInterface.initialize(this, appId, "zuber", fileName);
         // set upload url
-        TcStatInterface.setUrl("/uploadAction");
+        TcStatInterface.setUrl(NetConfig.ONLINE_URL);
         // Set loadPolicy
         TcStatInterface.setUploadPolicy(TcStatInterface.UploadPolicy.UPLOAD_POLICY_REALTIME, TcStatInterface.UPLOAD_TIME_ONE);
 

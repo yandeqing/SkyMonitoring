@@ -1,12 +1,14 @@
 package com.tamic.statinterface.stats.bean.header;
 
 
+import com.tamic.statinterface.stats.bean.BaseBean;
+
 /**
  * app信息
  *
  * @author Zuber
  */
-public class AppInfo {
+public class AppInfo extends BaseBean{
 
     private String appId;
 

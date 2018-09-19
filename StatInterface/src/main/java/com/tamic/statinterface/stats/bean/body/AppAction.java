@@ -5,39 +5,39 @@ package com.tamic.statinterface.stats.bean.body;
  * Created by Tamic 2016-03-24.
  */
 public class AppAction {
-    private String action_time ;
-    private int app_action_type ;
-    private String app_action_desc ;
+    private String actionTime;
+    private int appActionType;
+    private String appActionDesc;
 
-    public String getAction_time() {
-        return action_time;
+    public String getActionTime() {
+        return actionTime;
     }
 
-    public void setAction_time(String action_time) {
-        this.action_time = action_time;
+    public void setActionTime(String actionTime) {
+        this.actionTime = actionTime;
     }
 
-    public int getApp_action_type() {
-        return app_action_type;
+    public int getAppActionType() {
+        return appActionType;
     }
 
-    public void setApp_action_type(int app_action_type) {
-        this.app_action_type = app_action_type;
+    public void setAppActionType(int appActionType) {
+        this.appActionType = appActionType;
     }
 
-    public String getApp_action_desc() {
-        return app_action_desc;
+    public String getAppActionDesc() {
+        return appActionDesc;
     }
 
-    public void setApp_action_desc(String app_action_desc) {
-        this.app_action_desc = app_action_desc;
+    public void setAppActionDesc(String appActionDesc) {
+        this.appActionDesc = appActionDesc;
     }
 
     @Override
     public String toString() {
         return "AppAction{" +
-                "action_time='" + action_time + '\'' +
-                ", app_action_type='" + app_action_type + '\'' +
+                "actionTime='" + actionTime + '\'' +
+                ", appActionType='" + appActionType + '\'' +
                 '}';
     }
 }

@@ -106,13 +106,13 @@ public class DataBlock {
 
                 @Override
                 public int compare(Page lhs, Page rhs) {
-                    return lhs.getPage_start_time().compareTo(rhs.getPage_start_time());
+                    return lhs.getPageStartTime().compareTo(rhs.getPageStartTime());
                 }
             });
             Collections.sort(event, new Comparator<Event>() {
                 @Override
                 public int compare(Event lhs, Event rhs) {
-                    return lhs.getAction_time().compareTo(rhs.getAction_time());
+                    return lhs.getActionTime().compareTo(rhs.getActionTime());
                 }
             });
         }

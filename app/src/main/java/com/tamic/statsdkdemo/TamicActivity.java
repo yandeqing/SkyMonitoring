@@ -15,7 +15,7 @@ import com.tamic.statinterface.stats.core.TcStatInterface;
  * Created by LIUYONGKUI726 on 2017-12-07.
  */
 
-public abstract class TamicActivity extends AppCompatActivity {
+public  class TamicActivity extends AppCompatActivity {
 
     private String TAG = "Tamic";
 
@@ -33,7 +33,7 @@ public abstract class TamicActivity extends AppCompatActivity {
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         rootView = getWindow().getDecorView();
-        rootViewTree = getClass().getName();
+        rootViewTree = getClass().getSimpleName();
         bigDataPrefix = "Tamic_test";
         bigDataIngorePrefix = bigDataPrefix + "";
         bigDataEventPrefix = bigDataIngorePrefix + "Igmore";

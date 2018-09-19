@@ -52,10 +52,10 @@ public class DataConstruct {
         }
 
         Event event = new Event();
-        event.setPage_id(pageId);
-        event.setReferer_page_id(referPageId);
-        event.setEvent_name(eventName);
-        event.setAction_time(DateUtil.getDateString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
+        event.setPageId(pageId);
+        event.setRefererPageId(referPageId);
+        event.setEventName(eventName);
+        event.setActionTime(DateUtil.getDateString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
 
         if (parameters != null && !parameters.isEmpty() && parameters.size() > 0) {
             CopyOnWriteArrayList<KeyValueBean> parameter = new CopyOnWriteArrayList<>();
@@ -74,17 +74,16 @@ public class DataConstruct {
         storeEvent(event);
     }
 
-    public static synchronized void initEvent(String eventName, String viewValue) {
-        Map<String, String> parameters=new HashMap<>(1);
-        parameters.put("value",viewValue);
-        initEvent(eventName,parameters);
-    }
 
     public static synchronized void initEvent(ViewPath viewPath) {
-        Map<String, String> parameters=new HashMap<>(1);
-        parameters.put("value",viewPath.viewValue);
-        parameters.put("tagvalue",viewPath.tagValue);
-        initEvent(viewPath.viewTree,parameters);
+        Map<String, String> parameters = new HashMap<>(2);
+        if (viewPath.viewValue != null&&viewPath.viewName!=null) {
+            parameters.put(viewPath.viewName, viewPath.viewValue);
+        }
+        if (viewPath.tagValue != null) {
+            parameters.put("tagvalue", viewPath.tagValue);
+        }
+        initEvent(viewPath.viewTree, parameters);
     }
 
     /**
@@ -98,11 +97,11 @@ public class DataConstruct {
             return;
         }
         parameter.add(new KeyValueBean(businessName, businessValue));
-        if (event == null || event.getEvent_name().isEmpty()) {
+        if (event == null || event.getEventName().isEmpty()) {
             throw new RuntimeException("you must call initEvent before onEvent!");
         }
         event.setParameter(parameter);
-        events.put(event.getEvent_name(), event);
+        events.put(event.getEventName(), event);
         parameter.clear();
     }
 
@@ -122,9 +121,9 @@ public class DataConstruct {
         }
         recardPageId(context, page_Id);
         page = new Page();
-        page.setPage_start_time(DateUtil.getDateString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
-        page.setReferer_page_id(referPageId);
-        page.setPage_id(pageId);
+        page.setPageStartTime(DateUtil.getDateString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
+        page.setRefererPageId(referPageId);
+        page.setPageId(pageId);
         pageParameter.clear();
     }
 
@@ -148,7 +147,7 @@ public class DataConstruct {
         if (page == null) {
             throw new RuntimeException("you must init before storePage");
         }
-        page.setPage_end_time(DateUtil.getDateString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
+        page.setPageEndTime(DateUtil.getDateString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
         StaticsAgent.storeObject(page);
     }
 
@@ -160,8 +159,8 @@ public class DataConstruct {
      */
     public static void storeAppAction(int type) {
         appAction = new AppAction();
-        appAction.setAction_time(DateUtil.getDateString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
-        appAction.setApp_action_type(type);
+        appAction.setActionTime(DateUtil.getDateString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
+        appAction.setAppActionType(type);
         StaticsAgent.storeObject(appAction);
         appAction = null;
     }

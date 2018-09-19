@@ -7,28 +7,28 @@ import java.util.List;
  * Created by ZHANGLIANG098 on 2016-03-24.
  */
 public class Event {
-    private String page_id ;
-    private String referer_page_id ;
+    private String pageId;
+    private String refererPageId;
     private String uid ;
-    private String city_id ;
-    private String event_name ;
-    private String action_time ;
+    private String cityId;
+    private String eventName;
+    private String actionTime;
     private List<KeyValueBean> parameter ;
 
-    public String getPage_id() {
-        return page_id;
+    public String getPageId() {
+        return pageId;
     }
 
-    public void setPage_id(String page_id) {
-        this.page_id = page_id;
+    public void setPageId(String pageId) {
+        this.pageId = pageId;
     }
 
-    public String getReferer_page_id() {
-        return referer_page_id;
+    public String getRefererPageId() {
+        return refererPageId;
     }
 
-    public void setReferer_page_id(String referer_page_id) {
-        this.referer_page_id = referer_page_id;
+    public void setRefererPageId(String refererPageId) {
+        this.refererPageId = refererPageId;
     }
 
     public String getUid() {
@@ -39,28 +39,28 @@ public class Event {
         this.uid = uid;
     }
 
-    public String getCity_id() {
-        return city_id;
+    public String getCityId() {
+        return cityId;
     }
 
-    public void setCity_id(String city_id) {
-        this.city_id = city_id;
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
     }
 
-    public String getEvent_name() {
-        return event_name;
+    public String getEventName() {
+        return eventName;
     }
 
-    public void setEvent_name(String event_name) {
-        this.event_name = event_name;
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 
-    public String getAction_time() {
-        return action_time;
+    public String getActionTime() {
+        return actionTime;
     }
 
-    public void setAction_time(String action_time) {
-        this.action_time = action_time;
+    public void setActionTime(String actionTime) {
+        this.actionTime = actionTime;
     }
 
     public List<KeyValueBean> getParameter() {
@@ -74,12 +74,12 @@ public class Event {
     @Override
     public String toString() {
         return "Event{" +
-                "page_id='" + page_id + '\'' +
-                ", referer_page_id='" + referer_page_id + '\'' +
+                "pageId='" + pageId + '\'' +
+                ", refererPageId='" + refererPageId + '\'' +
                 ", uid='" + uid + '\'' +
-                ", city_id='" + city_id + '\'' +
-                ", event_name='" + event_name + '\'' +
-                ", action_time='" + action_time + '\'' +
+                ", cityId='" + cityId + '\'' +
+                ", eventName='" + eventName + '\'' +
+                ", actionTime='" + actionTime + '\'' +
                 ", parameter=" + parameter +
                 '}';
     }

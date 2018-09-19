@@ -169,9 +169,9 @@ public class TcStaticsManagerImpl implements TcStaticsManager, TcObserverPresent
         //startSchedule
         startSchedule();
 
-        String pageId = checkValidId(context.getClass().getName());
+        String pageId = checkValidId(context.getClass().getSimpleName());
         if (pageId == null) {
-            pageId = context.getClass().getName();
+            pageId = context.getClass().getSimpleName();
         }
 
         // init page
@@ -207,10 +207,6 @@ public class TcStaticsManagerImpl implements TcStaticsManager, TcObserverPresent
     }
 
 
-    @Override
-    public void onInitEvent(String eventName,String viewValue) {
-        DataConstruct.initEvent(eventName,viewValue);
-    }
 
     @Override
     public void onInitEvent(ViewPath viewPath) {

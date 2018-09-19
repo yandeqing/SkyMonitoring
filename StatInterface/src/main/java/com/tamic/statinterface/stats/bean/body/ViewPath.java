@@ -22,6 +22,7 @@ public class ViewPath {
      * 输入框的不采集，涉及用户隐私
      */
     public String viewValue;
+    public String viewName;
     public String tagValue;
 
     public String specifyTag;
@@ -44,13 +45,18 @@ public class ViewPath {
         if (view instanceof Button) {
             Button button = (Button) view;
             viewValue = button.getText().toString();
+            viewName = "button";
             setTag(button);
         } else if (view instanceof EditText) {
             setTag(view);
+            EditText editText = (EditText) view;
+            viewName = "EditText";
+            viewValue = editText.getText().toString();
             //不采集值
         } else if (view instanceof TextView) {
             TextView textView = (TextView) view;
             viewValue = textView.getText().toString();
+            viewName = "TextView";
             setTag(textView);
         }
     }

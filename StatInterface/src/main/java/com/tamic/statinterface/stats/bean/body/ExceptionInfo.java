@@ -1,5 +1,7 @@
 package com.tamic.statinterface.stats.bean.body;
 
+import com.tamic.statinterface.stats.util.DateUtil;
+
 /**
  * Created by null on 2016/9/22.
  */
@@ -8,7 +10,7 @@ public class ExceptionInfo {
     private String systemModel;
     private String systemVersion;
     private String exceptionString;
-
+    private String actionTime;
 
     public ExceptionInfo() {
 
@@ -19,6 +21,7 @@ public class ExceptionInfo {
         this.systemModel = systemModel;
         this.systemVersion = systemVersion;
         this.exceptionString = exceptionString;
+        this.actionTime = DateUtil.getDateString(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss");
     }
 
     public String getPhoneModel() {
@@ -51,6 +54,14 @@ public class ExceptionInfo {
 
     public void setExceptionString(String exceptionString) {
         this.exceptionString = exceptionString;
+    }
+
+    public String getActionTime() {
+        return actionTime;
+    }
+
+    public void setActionTime(String actionTime) {
+        this.actionTime = actionTime;
     }
 
     @Override

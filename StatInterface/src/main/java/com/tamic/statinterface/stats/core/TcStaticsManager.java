@@ -50,7 +50,6 @@ public interface TcStaticsManager {
 
      void onPageParameter(String... strings);
 
-     void onInitEvent(String eventName,String value);
 
      void onInitEvent(ViewPath viewPath);
 

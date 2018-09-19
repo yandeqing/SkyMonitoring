@@ -127,11 +127,6 @@ public class TcStatSdk {
 
     }
 
-    protected void initEvent(String envntName, String value) {
-
-        staticsManager.onInitEvent(envntName,value);
-
-    }
     protected void initEvent(ViewPath viewPath) {
 
         staticsManager.onInitEvent(viewPath);

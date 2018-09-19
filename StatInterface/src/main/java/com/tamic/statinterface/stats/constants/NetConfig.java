@@ -15,7 +15,7 @@ public class NetConfig {
     /**
      * You Url
      */
-    public static String ONLINE_URL ="/uploadAction";
+    public static String ONLINE_URL ="http://192.168.5.232:8080/uploadAction";
 
     /**
      * 数据上报Debug Url
